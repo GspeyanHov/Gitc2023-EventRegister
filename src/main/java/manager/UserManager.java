@@ -14,7 +14,7 @@ public class UserManager {
     private EventManager eventManager = new EventManager();
 
     public void add(User user) {
-        String sql = "insert into user(name, surname, email, event_id) VALUES(?,?,?,?)";
+        String sql = "insert into user(name, surname, email, event_id,event_date) VALUES(?,?,?,?,?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getName());
